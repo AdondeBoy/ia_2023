@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="77f43c9c-22b5-4e44-be88-d4926ec35484" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monedes/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/monedes/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monedes/entorn.py" beforeDir="false" afterPath="$PROJECT_DIR$/monedes/entorn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +16,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -38,7 +47,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -62,6 +71,8 @@
       <workItem from="1696934065285" duration="552000" />
       <workItem from="1696934895987" duration="65000" />
       <workItem from="1696935011720" duration="2000" />
+      <workItem from="1696935140985" duration="1466000" />
+      <workItem from="1696936631195" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="Resuelto amplada">
       <option name="closed" value="true" />
