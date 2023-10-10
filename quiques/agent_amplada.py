@@ -10,23 +10,35 @@ class BarcaAmplada(Barca):
         self.__tancats = None
         self.__accions = None
 
-    def cerca_general(self):
-        X = Estat(0,3,3,)
-        self.__oberts = [X]
+    def cerca_general(self, estat: Estat):
+        self.__oberts = [estat]
         self.__tancats = []
-        while self.__oberts:
-            X = self.__oberts.pop(0)
-            if X.es_meta():
-                return True, self.__oberts
+        while self.__oberts != []:
+            estat = self.__oberts.pop(0)
+            if estat in self.__tancats:
+                continue
+            if estat.es_segur():
+                if estat.es_meta():
+                    self.__accions = estat.accions_previes
+                    return True
+                else:
+                    fills = estat.genera_fill()
+                    # recorrer fills y remove los malos
+                    self.__tancats.append(estat)
+                    self.__oberts += fills
             else:
-                fills = X.genera_fill()
-                # recorrer fills y remove los malos
-                self.__tancats.append(X)
-                self.__oberts += fills
+                self.__tancats.append(estat)
         return False
 
 
     def actua(
             self, percepcio: entorn.Percepcio
     ) -> entorn.Accio | tuple[entorn.Accio, object]:
-        return do()
+        estat = Estat(percepcio[SENSOR.LLOC], 3, 3)
+
+        if self.__accions is None:
+            self.cerca_general(estat)
+        if len(self.__accions) == 0:
+            return AccionsBarca.ATURAR
+        else:
+            return AccionsBarca.MOURE, self.__accions.pop()
