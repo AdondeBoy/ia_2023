@@ -35,35 +35,54 @@ class Estat:
         self.accions_previstes = accions_previes
         self.posEspai = self.monedes.index(" ")
 
-    def generar_fills_desplacar(self) -> list:
+    def generar_fills_botar(self) -> list:
         lista_botar = []
         for i in self.monedes:
             estatAux = self
-            if estatAux.monedes[i] == "C":
-                estatAux.monedes[i] = " "
-                estatAux[self.posEspai] = "X"
-                estatAux.accions_previstes.append("BOTAR")
-                lista_botar.append(estatAux)
-            elif estatAux.monedes[i] == "X":
-                estatAux.monedes[i] = " "
-                estatAux[self.posEspai] = "C"
-                estatAux.accions_previstes.append("BOTAR")
-                lista_botar.append(estatAux)
+
+            if abs(i - self.posEspai) == 2: # Tiene que haber una moneda entre el espacio y la moneda que salta
+                # Si la moneda que salta es una C, se cambia por una X y viceversa
+                if estatAux.monedes[i] == "C":
+                    estatAux.monedes[i], estatAux[self.posEspai] = " ", "X"
+                    estatAux.accions_previstes.append("BOTAR")
+                    lista_botar.append(estatAux)
+
+                elif estatAux.monedes[i] == "X":
+                    estatAux.monedes[i], estatAux[self.posEspai] = " ", "C"
+                    estatAux.accions_previstes.append("BOTAR")
+                    lista_botar.append(estatAux)
+
         return lista_botar
 
-    def generar_fills_botar(self) -> list:
+    def generar_fills_desplacar(self) -> list:
         lista_desplacar = []
         for i in self.monedes:
             estatAux = self
-            if estatAux.monedes[i] == "C":
-                estatAux.monedes[i], estatAux[self.posEspai] = " ", "X"
+
+            if (i-1 == self.posEspai) | (i+1 == self.posEspai): # La moneda tiene que estar adyacente al espacio
+                # Se intercambian la moneda y el espacio
+                estatAux.monedes[i], estatAux[self.posEspai] = estatAux[self.posEspai], estatAux.monedes[i]
                 estatAux.accions_previstes.append("BOTAR")
                 lista_desplacar.append(estatAux)
-            elif estatAux.monedes[i] == "X":
-                estatAux.monedes[i], estatAux[self.posEspai] = " ", "C"
-                estatAux.accions_previstes.append("BOTAR")
-                lista_desplacar.append(estatAux)
+
         return lista_desplacar
+
+    def generar_fills_girar(self) -> list:
+        lista_girar = []
+        for i in self.monedes:
+            estatAux = self
+
+            if estatAux.monedes[i] == "C":
+                estatAux.monedes[i] = "X"
+                estatAux.accions_previstes.append("GIRAR")
+                lista_girar.append(estatAux)
+
+            elif estatAux.monedes[i] == "X":
+                estatAux.monedes[i] = "C"
+                estatAux.accions_previstes.append("GIRAR")
+                lista_girar.append(estatAux)
+        return lista_girar
+
 
     def generar_fills(self) -> list:
         lista_fills = []
