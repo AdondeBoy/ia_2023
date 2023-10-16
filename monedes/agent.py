@@ -5,6 +5,7 @@ Percepcions:
 Solució:
     " XXXC"
 """
+import queue
 
 from ia_2022 import agent, entorn
 
@@ -23,9 +24,22 @@ class AgentMoneda(agent.Agent):
         print(self._posicio_pintar)
 
     def actua(
-        self, percepcio: entorn.Percepcio
+            self, percepcio: entorn.Percepcio
     ) -> entorn.Accio | tuple[entorn.Accio, object]:
         estat = Estat()
+        self.__oberts = queue.PriorityQueue(estat.heuristica + estat.cost)
+        self.__tancats = []
+        estat.monedes = list(INICIAL)
+        estat.generar_fills()
+        while not self.__oberts.empty():
+            estat = self.__oberts.get()
+            if estat.es_final():
+                return estat.accions_previes
+            else:
+                self.__tancats.append(estat)
+                estat.generar_fills()
+
+
 
 class Estat:
     def __init__(self, accions_previes = None) -> None:
@@ -36,12 +50,12 @@ class Estat:
         self.accions_previes = accions_previes
         self.posEspai = self.monedes.index(" ")
         self.cost = 0
+        self.heuristica = self.calcular_heuristica()
 
     def generar_fills_botar(self) -> list:
         lista_botar = []
         for i in self.monedes:
             estatAux = self
-            estatAux.cost += 3
 
             if abs(i - self.posEspai) == 2: # Tiene que haber una moneda entre el espacio y la moneda que salta
                 # Si la moneda que salta es una C, se cambia por una X y viceversa
@@ -54,22 +68,26 @@ class Estat:
                     estatAux.monedes[i], estatAux[self.posEspai] = " ", "C"
                     estatAux.accions_previes.append("BOTAR")
                     lista_botar.append(estatAux)
-
-                AgentMoneda.__oberts.put((0, estatAux))
+                # Se calculan el coste y la heurística
+                estatAux.cost += 3
+                estatAux.heuristica = estatAux.calcular_heuristica()
+                AgentMoneda.__oberts.put(((estatAux.cost + estatAux.heuristica), estatAux))
         return lista_botar
 
     def generar_fills_desplacar(self) -> list:
         lista_desplacar = []
         for i in self.monedes:
             estatAux = self
-            estatAux.cost += 1
 
             if (i-1 == self.posEspai) | (i+1 == self.posEspai): # La moneda tiene que estar adyacente al espacio
                 # Se intercambian la moneda y el espacio
                 estatAux.monedes[i], estatAux[self.posEspai] = estatAux[self.posEspai], estatAux.monedes[i]
                 estatAux.accions_previes.append("BOTAR")
                 lista_desplacar.append(estatAux)
-                AgentMoneda.__oberts.put((0, estatAux))
+                # Se calculan el coste y la heurística
+                estatAux.cost += 1
+                estatAux.heuristica = estatAux.calcular_heuristica()
+                AgentMoneda.__oberts.put(((estatAux.cost + estatAux.heuristica), estatAux))
 
         return lista_desplacar
 
@@ -77,19 +95,24 @@ class Estat:
         lista_girar = []
         for i in self.monedes:
             estatAux = self
-            estatAux.cost += 2
 
             if estatAux.monedes[i] == "C":
                 estatAux.monedes[i] = "X"
                 estatAux.accions_previes.append("GIRAR")
                 lista_girar.append(estatAux)
-                AgentMoneda.__oberts.put((0, estatAux))
+                # Se calculan el coste y la heurística
+                estatAux.cost += 2
+                estatAux.heuristica = estatAux.calcular_heuristica()
+                AgentMoneda.__oberts.put(((estatAux.cost + estatAux.heuristica), estatAux))
 
             elif estatAux.monedes[i] == "X":
                 estatAux.monedes[i] = "C"
                 estatAux.accions_previes.append("GIRAR")
                 lista_girar.append(estatAux)
-                AgentMoneda.__oberts.put((0, estatAux))
+                # Se calculan el coste y la heurística
+                estatAux.cost += 2
+                estatAux.heuristica = estatAux.calcular_heuristica()
+                AgentMoneda.__oberts.put(((estatAux.cost + estatAux.heuristica), estatAux))
 
         return lista_girar
 
@@ -101,6 +124,9 @@ class Estat:
             if self.monedes[i] != SOLUCIO[i]:
                 h += 1
         return h
+
+    def es_final(self) -> bool:
+        return self.monedes == SOLUCIO
 
     def generar_fills(self) -> list:
         lista_fills = []
