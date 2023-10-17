@@ -42,7 +42,9 @@ class BarcaProfunditat(Barca):
                     fills = estat.genera_fill()
 
                     self.__tancats.append(estat)
-                    self.__oberts += fills
+                    for fill in fills:
+                        if fill not in self.__tancats:
+                            self.__oberts.insert(0, fill)
             else:
                 self.__tancats.append(estat)
         return False

@@ -23,7 +23,7 @@ class BarcaAmplada(Barca):
                     return True
                 else:
                     fills = estat.genera_fill()
-                    self.__tancats.insert(0, estat)
+                    self.__tancats.append(estat)
                     self.__oberts += fills
             else:
                 self.__tancats.append(estat)
