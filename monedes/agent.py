@@ -54,18 +54,18 @@ class Estat:
 
     def generar_fills_botar(self) -> list:
         lista_botar = []
-        for i in self.monedes:
+        for i in range(len(self.monedes)):
             estatAux = self
 
             if abs(i - self.posEspai) == 2: # Tiene que haber una moneda entre el espacio y la moneda que salta
                 # Si la moneda que salta es una C, se cambia por una X y viceversa
                 if estatAux.monedes[i] == "C":
-                    estatAux.monedes[i], estatAux[self.posEspai] = " ", "X"
+                    estatAux.monedes[i], estatAux.monedes[self.posEspai] = " ", "X"
                     estatAux.accions_previes.append("BOTAR")
                     lista_botar.append(estatAux)
 
                 elif estatAux.monedes[i] == "X":
-                    estatAux.monedes[i], estatAux[self.posEspai] = " ", "C"
+                    estatAux.monedes[i], estatAux.monedes[self.posEspai] = " ", "C"
                     estatAux.accions_previes.append("BOTAR")
                     lista_botar.append(estatAux)
                 # Se calculan el coste y la heurística
@@ -76,12 +76,12 @@ class Estat:
 
     def generar_fills_desplacar(self) -> list:
         lista_desplacar = []
-        for i in self.monedes:
+        for i in range(len(self.monedes)):
             estatAux = self
 
-            if (i-1 == self.posEspai) | (i+1 == self.posEspai): # La moneda tiene que estar adyacente al espacio
+            if abs(i - self.posEspai) == 1: # La moneda tiene que estar adyacente al espacio
                 # Se intercambian la moneda y el espacio
-                estatAux.monedes[i], estatAux[self.posEspai] = estatAux[self.posEspai], estatAux.monedes[i]
+                estatAux.monedes[i], estatAux.monedes[self.posEspai] = estatAux.monedes[self.posEspai], estatAux.monedes[i]
                 estatAux.accions_previes.append("BOTAR")
                 lista_desplacar.append(estatAux)
                 # Se calculan el coste y la heurística
@@ -93,7 +93,7 @@ class Estat:
 
     def generar_fills_girar(self) -> list:
         lista_girar = []
-        for i in self.monedes:
+        for i in range(len(self.monedes)):
             estatAux = self
 
             if estatAux.monedes[i] == "C":
@@ -118,7 +118,7 @@ class Estat:
 
     def calcular_heuristica(self) -> int:
         h = abs(self.posEspai - SOLUCIO.index(" ")) # p0
-        for i in self.monedes: # vx
+        for i in range(len(self.monedes)): # vx
             if self.monedes[i] == " ":
                 continue
             if self.monedes[i] != SOLUCIO[i]:

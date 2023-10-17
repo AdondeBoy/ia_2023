@@ -8,11 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/ia_2023.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ia_2023.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monedes/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/monedes/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monedes/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/monedes/agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiques/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiques/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiques/agent_amplada.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiques/agent_amplada.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiques/agent_profunditat.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiques/agent_profunditat.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +41,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging master",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Santi/Documents/GitHub/ia_2023",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -123,5 +119,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ia_2023$agent_amplada.coverage" NAME="agent_amplada Coverage Results" MODIFIED="1696432510340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quiques" />
     <SUITE FILE_PATH="coverage/ia_2023$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1697473560829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monedes" />
+    <SUITE FILE_PATH="coverage/workspace_xml$agent.coverage" NAME="agent Coverage Results" MODIFIED="1697529482150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monedes" />
+    <SUITE FILE_PATH="coverage/workspace_xml$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1697530916527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monedes" />
   </component>
 </project>
