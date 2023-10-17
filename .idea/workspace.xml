@@ -7,7 +7,6 @@
     <list default="true" id="77f43c9c-22b5-4e44-be88-d4926ec35484" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/quiques/agent_amplada.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiques/agent_amplada.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiques/agent_profunditat.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiques/agent_profunditat.py" afterDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,16 +71,12 @@
       <workItem from="1696935011720" duration="2000" />
       <workItem from="1696935140985" duration="1466000" />
       <workItem from="1696936631195" duration="5000" />
+      <workItem from="1696936652689" duration="661000" />
       <workItem from="1697367637482" duration="2111000" />
       <workItem from="1697469863981" duration="179000" />
       <workItem from="1697470396691" duration="1698000" />
       <workItem from="1697472693168" duration="1407000" />
       <workItem from="1697563315150" duration="154000" />
-    </task>
-    <task id="LOCAL-00001" summary="Resuelto amplada">
-      <option name="closed" value="true" />
-      <created>1696934600193</created>
-      <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1696934600193</updated>
@@ -94,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696934934977</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="gen fills botar hecho">
+      <option name="closed" value="true" />
+      <created>1696937310193</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696937310193</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,10 +106,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Resuelto amplada" />
     <MESSAGE value="Ni idea, lo habrá hecho él" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ni idea, lo habrá hecho él" />
+    <MESSAGE value="gen fills botar hecho" />
+    <option name="LAST_COMMIT_MESSAGE" value="gen fills botar hecho" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ia_2023$agent_amplada.coverage" NAME="agent_amplada Coverage Results" MODIFIED="1696432510340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quiques" />
     <SUITE FILE_PATH="coverage/ia_2023$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1697473560829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monedes" />
+    <SUITE FILE_PATH="coverage/workspace_xml$agent.coverage" NAME="agent Coverage Results" MODIFIED="1697529482150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monedes" />
+    <SUITE FILE_PATH="coverage/workspace_xml$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1697530916527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monedes" />
   </component>
 </project>
