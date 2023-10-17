@@ -8,6 +8,7 @@ Solució:
 import queue
 
 from ia_2022 import agent, entorn
+from monedes.entorn import AccionsMoneda
 
 SOLUCIO = " XXXC"
 INICIAL = "CX CX"
@@ -27,17 +28,42 @@ class AgentMoneda(agent.Agent):
             self, percepcio: entorn.Percepcio
     ) -> entorn.Accio | tuple[entorn.Accio, object]:
         estat = Estat()
-        self.__oberts = queue.PriorityQueue(estat.heuristica + estat.cost)
-        self.__tancats = []
+
         estat.monedes = list(INICIAL)
-        estat.generar_fills()
-        while not self.__oberts.empty():
-            estat = self.__oberts.get()
-            if estat.es_final():
-                return estat.accions_previes
+        if self.__accions is None:
+            self.cerca_general(estat)
+        if len(self.__accions) == 0:
+            return AccionsMoneda.RES
+        else:
+            return AccionsMoneda.RES, self.__accions.pop()
+
+        #estat.generar_fills()
+        #while not self.__oberts.empty():
+            #    estat = self.__oberts.get()
+            #if estat.es_final():
+            #    return estat.accions_previes
+            #else:
+            #    self.__tancats.append(estat)
+        #    estat.generar_fills()
+
+    def cerca_general(self, estat):
+        self.__oberts = [estat]
+        self.__tancats = []
+        while self.__oberts != []:
+            estat = self.__oberts.pop(0)
+            if estat in self.__tancats:
+                continue
+            if estat.es_segur():
+                if estat.es_meta():
+                    self.__accions = estat.accions_previes
+                    return True
+                else:
+                    fills = estat.genera_fill()
+                    self.__tancats.insert(0, estat)
+                    self.__oberts += fills
             else:
                 self.__tancats.append(estat)
-                estat.generar_fills()
+        return False
 
 
 

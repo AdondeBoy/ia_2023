@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77f43c9c-22b5-4e44-be88-d4926ec35484" name="Changes" comment="gen fills botar hecho">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monedes/joc.py" beforeDir="false" afterPath="$PROJECT_DIR$/monedes/joc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monedes/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/monedes/agent.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +78,8 @@
       <workItem from="1697470396691" duration="1698000" />
       <workItem from="1697472693168" duration="1407000" />
       <workItem from="1697531522566" duration="90000" />
+      <workItem from="1697533787468" duration="176000" />
+      <workItem from="1697534582719" duration="598000" />
     </task>
     <task id="LOCAL-00001" summary="Resuelto amplada">
       <option name="closed" value="true" />
